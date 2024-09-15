@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class ObjectManager {
 
-
+  private char direction;
 
   public void moveSnake(){
     for (int i = snakeLenght; i > 0; i--){
@@ -18,5 +18,15 @@ public class ObjectManager {
       case 'R' -> x[0] = x[0] + UNIT_SIZE;       
     }
     
+  }
+
+
+
+
+  public char getDirection() {
+    return direction; 
+  }
+  public void setDirection(char direction) {
+    this.direction = direction;
   }
 }
