@@ -34,9 +34,26 @@ public class ObjectManager {
     }
     
   }
+  private void addFood() {
+    foodX = random.nextInt(WIDTH / UNIT_SIZE) * UNIT_SIZE;
+    foodY = random.nextInt(HEIGHT / UNIT_SIZE) * UNIT_SIZE;
+  }
 
-
-
+  public void resetGame() {
+    snakeLength = 5;
+    foodEaten = 0;
+    direction = 'R';
+    running = true;
+    for (int i = 0; i < snakeLength; i++) {
+      x[i] = 0;
+      y[i] = 0;
+    }
+    addFood();
+  }
+  public ObjectManager() {
+    random = new Random();
+    resetGame();
+  }
 
   public char getDirection() {
     return direction; 
@@ -44,16 +61,11 @@ public class ObjectManager {
   public void setDirection(char direction) {
     this.direction = direction;
   }
-
-
-
   public int getSnakeX(int index) { return x[index]; }
   public int getSnakeY(int index) { return y[index]; }
   public int getSnakeLength() { return snakeLength; }
   public int getFoodEaten() { return foodEaten; }
   public int getFoodX() { return foodX; }
   public int getFoodY() { return foodY; }
-  public char getDirection() { return direction; }
-  public void setDirection(char direction) { this.direction = direction; }
   public boolean isGameRunning() { return running; }
 }
