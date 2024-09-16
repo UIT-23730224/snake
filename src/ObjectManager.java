@@ -55,6 +55,27 @@ public class ObjectManager {
     resetGame();
   }
 
+  public void checkFoodCollision() {
+    if (x[0] == foodX && y[0] == foodY) {
+      snakeLength++;
+      foodEaten++;
+      addFood();
+    }
+  }
+
+  public void checkCollisions() {
+    for (int i = snakeLength; i > 0; i--) {
+      if (x[0] == x[i] && y[0] == y[i]) {
+        running = false;
+        break;
+      }
+    }
+
+    if (x[0] < 0 || x[0] >= WIDTH || y[0] < 0 || y[0] >= HEIGHT) {
+      running = false;
+    }
+}
+
   public char getDirection() {
     return direction; 
   }
