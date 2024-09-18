@@ -22,7 +22,7 @@ public class ObjectManager {
   
 
   public void moveSnake(){
-    for (int i = snakeLenght; i > 0; i--){
+    for (int i = snakeLength; i > 0; i--){
       x[i] = x[i-1];
       y[i] = y[i-1];
     }

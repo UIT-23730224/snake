@@ -3,7 +3,7 @@ package src;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
-public class InputHanler extends KeyAdapter {
+public class InputHandler extends KeyAdapter {
   private ObjectManager  objectManager;
 
   public InputHandler(ObjectManager objectManager){
